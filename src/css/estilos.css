@@ -1,0 +1,82 @@
+/* Define que todos os elementos irão trabalhar com border-box no box model */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+header {
+	height: 60px;
+	border-bottom: 1px solid #ccc;
+}
+
+header img {
+	margin-top: 12px;
+}
+
+#planos {
+	padding: 80px 0;
+}
+
+/* Pseudo-elemento para que novos elementos sejam exibidos embaixo dos elementos com float
+   -> Nota: Usando "::" a partir do CSS3 para especificar pseudo elementos
+*/
+#planos::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+article {
+	padding: 10px; 
+	border: 1px solid #95a4a5;	
+}
+
+
+article > h2 {
+	background-color: #95a4a5;
+	color: #fff;
+	text-align: center;
+	line-height: 2.5; /* Tamanho da linha 2.5x maior que o tamanho da fonte */
+	margin: -10px;
+	margin-bottom: 0;
+	font-weight: normal;
+	font-size: 28px;
+}
+
+article > div {
+	text-align: center;
+	font-size: 28px;
+	margin: 20px 0;
+}
+
+article > ul {
+	list-style: none;
+	padding: 0;
+	margin: 20px 0;
+}
+
+article > ul > li {
+	text-align: center;
+}
+
+article > footer {
+	text-align: center;
+}
+
+.botao {
+	display: inline-block;
+	background-color: #127d00;
+	color: #fff;
+	padding: 12px 16px;
+	text-decoration: none;
+}
+
+/* -> Nota: Usando ":" para especificar pseudo classes */
+.botao:hover, .botao:focus {
+	background-color: #0e6400;
+}

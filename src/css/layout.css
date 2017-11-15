@@ -1,0 +1,65 @@
+.layout-cabecalho {
+	height: 60px;
+	line-height: 60px; /* pra que a altura da linha onde estão os elementos seja igual ao height acima, assim os elementos ficarão alinhados no centro da linha */
+	border-bottom: 1px solid #ccc;
+
+	background-color: #fff;
+}
+
+.layout-cabecalho--home {
+	position: fixed;	
+	top: 0;
+	left: 0;
+	right: 0;
+	/* Usado z-index para que a barra do cabecalho fique por cima do texto dos planos 
+	quando rolamos a pagina em dispositivos menos. E preciso fazer isso pois o 
+	sistema de grid do bootstrap usa um posicionamento relativo para os elementos, e 
+	dessa forma quando rolamos a pagina alguns elementos passam por cima dessa barra.*/
+	z-index: 1; /*Quem tem maior numero fica por cima */
+}
+
+.layout-planos {
+	padding: 80px 0;
+}
+
+/* Pseudo-elemento para que novos elementos sejam exibidos embaixo dos elementos com float
+   -> Nota: Usando "::" a partir do CSS3 para especificar pseudo elementos
+*/
+/* Obs: ao usar grid css do bootstrap, isso não é mais necessário.
+#planos::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+*/
+
+.layout-chamada {
+	margin-top: 60px;
+	padding: 80px 0;
+	background-color: #009900;
+}
+
+.layout-depoimento {
+	padding: 80px 0;
+	background-color: #e7e7e7;
+}
+
+.layout-rodape {
+	padding: 40px 0;
+
+	background-color: #484848;
+
+	color: #fff;
+	text-align: center;
+}
+
+/* Até 749px aplica esse estilo, a partir de 750px não tem mais margin-bottom*/
+@media(max-width: 749px) { 
+	.layout-planos .row > div:not(.ultima-coluna) {
+		margin-bottom: 40px;
+	}
+}
+
+.layout-assinatura {
+	padding: 40px 0;
+}
